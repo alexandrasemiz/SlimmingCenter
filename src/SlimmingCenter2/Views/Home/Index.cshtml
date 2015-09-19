@@ -1,0 +1,23 @@
+﻿@using  SlimmingCenter2.Models.ClientModel
+@model ICollection<Client>
+
+
+<div id="text">
+    @ViewBag.SuccessText
+</div>
+
+<div id="clientList">
+    <table>
+        @foreach (Client c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.name</td>
+            </tr>
+        }
+    </table>
+</div> 
+
+<div id="exception">
+    @ViewBag.ExpectionText
+</div>
