@@ -47,6 +47,8 @@ namespace SlimmingCenter2.Models.Context
                 .Map(t => t.MapLeftKey("UserId").MapRightKey("PositionId").ToTable("UsersPosition"));
             modelBuilder.Entity<Role>().HasMany(c => c.Rules).WithMany(s => s.Roles)
                 .Map(t => t.MapLeftKey("RoleId").MapRightKey("RuleId").ToTable("RoleRule"));
+            modelBuilder.Entity<Fitness>().HasMany(c=>c.FitnessLessons).WithMany(s=>s.Fitnesses)
+                .Map(t=>t.MapLeftKey("FitnessId").MapRightKey("FitnessLessonId").ToTable("FitnessFitnessLesson"));
             }
     }
 }
